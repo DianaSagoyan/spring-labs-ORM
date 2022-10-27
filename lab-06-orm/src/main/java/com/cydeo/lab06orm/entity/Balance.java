@@ -12,7 +12,6 @@ import java.math.BigDecimal;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "balance")
 public class Balance extends BaseEntity{
     private BigDecimal amount;
 

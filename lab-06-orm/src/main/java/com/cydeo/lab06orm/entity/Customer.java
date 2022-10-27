@@ -9,7 +9,6 @@ import javax.persistence.Table;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "customer")
 public class Customer extends BaseEntity{
     private String email;
     private String firstName;
