@@ -14,7 +14,7 @@ public class Product extends BaseEntity{
     private String Name;
     private BigDecimal price;
     private int quantity;
-    private int remaining_quantity;
+    private int remainingQuantity;
 
     @ManyToMany
     @JoinTable(name = "productCategoryRel",
@@ -22,11 +22,5 @@ public class Product extends BaseEntity{
     inverseJoinColumns = @JoinColumn(name = "c_id"))
     private List<Category> category;
 
-    public Product(String name, BigDecimal price, int quantity, int remaining_quantity, List<Category> category) {
-        Name = name;
-        this.price = price;
-        this.quantity = quantity;
-        this.remaining_quantity = remaining_quantity;
-        this.category = category;
-    }
+
 }

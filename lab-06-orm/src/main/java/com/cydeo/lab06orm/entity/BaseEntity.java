@@ -7,5 +7,5 @@ import java.math.BigInteger;
 public class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private BigInteger id;
+    private Long id;
 }

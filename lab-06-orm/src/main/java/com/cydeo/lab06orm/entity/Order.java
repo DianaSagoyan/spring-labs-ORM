@@ -1,16 +1,16 @@
 package com.cydeo.lab06orm.entity;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @Table(name = "orders")
 public class Order extends BaseEntity{
@@ -20,17 +20,11 @@ public class Order extends BaseEntity{
     @OneToOne
     private Cart cart;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Customer customer;
 
     @OneToOne
     private Payment payment;
 
-    public Order(BigDecimal paidPrice, BigDecimal totalPrice, Cart cart, Customer customer, Payment payment) {
-        this.paidPrice = paidPrice;
-        this.totalPrice = totalPrice;
-        this.cart = cart;
-        this.customer = customer;
-        this.payment = payment;
-    }
+
 }

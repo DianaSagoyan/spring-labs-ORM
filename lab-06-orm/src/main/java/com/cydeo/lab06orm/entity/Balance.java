@@ -1,7 +1,9 @@
 package com.cydeo.lab06orm.entity;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,7 +12,8 @@ import javax.persistence.Table;
 import java.math.BigDecimal;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 public class Balance extends BaseEntity{
     private BigDecimal amount;
@@ -18,8 +21,4 @@ public class Balance extends BaseEntity{
     @OneToOne(fetch = FetchType.LAZY)
     private Customer customer;
 
-    public Balance(BigDecimal amount, Customer customer) {
-        this.amount = amount;
-        this.customer = customer;
-    }
 }

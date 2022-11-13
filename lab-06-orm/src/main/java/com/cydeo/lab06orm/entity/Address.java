@@ -1,14 +1,20 @@
 package com.cydeo.lab06orm.entity;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
-public class Address extends BaseEntity{
+public class Address {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String id;
     private String name;
     private String street;
     private String zipCode;
@@ -16,10 +22,4 @@ public class Address extends BaseEntity{
     @ManyToOne(fetch = FetchType.LAZY)
     private Customer customer;
 
-    public Address(String name, String street, String zipCode, Customer customer) {
-        this.name = name;
-        this.street = street;
-        this.zipCode = zipCode;
-        this.customer = customer;
-    }
 }

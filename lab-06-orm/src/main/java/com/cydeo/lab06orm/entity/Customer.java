@@ -1,13 +1,16 @@
 package com.cydeo.lab06orm.entity;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 public class Customer extends BaseEntity{
     private String email;
@@ -15,10 +18,4 @@ public class Customer extends BaseEntity{
     private String lastName;
     private String userName;
 
-    public Customer(String email, String firstName, String lastName, String userName) {
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.userName = userName;
-    }
 }
